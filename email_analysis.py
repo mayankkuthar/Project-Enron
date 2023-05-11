@@ -3,6 +3,7 @@ import pickle
 from collections import Counter
 
 import matplotlib.pyplot as plt
+import matplotlib
 import nltk
 import pandas as pd
 from nltk.corpus import stopwords
@@ -72,4 +73,14 @@ def analyze_emails():
 
 
 # Call the function to analyze the emails
-analyze_emails()
+#analyze_emails()
+
+#Top 20 Frequent Email users
+num_of_mails = enron_email_data["Employee"].value_counts().head(20)
+
+font = {'size'   : 8}
+
+matplotlib.rc('font', **font)
+
+plt.plot(num_of_mails)
+plt.show()
